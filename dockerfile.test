@@ -1,0 +1,11 @@
+FROM python:3.8
+
+WORKDIR /app
+
+COPY . . 
+
+RUN pip install Jinja2==2.11.3 MarkupSafe==2.0.1 itsdangerous==2.0.1 werkzeug==1.0.1
+
+RUN pip install -r src/requirements.txt
+
+CMD [ "make", "test" ]
