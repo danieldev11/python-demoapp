@@ -52,9 +52,8 @@ undeploy:  ## 💀 Remove from Azure
 	@echo "### WARNING! Going to delete $(AZURE_RES_GROUP) 😲"
 	az group delete -n $(AZURE_RES_GROUP) -o table --no-wait
 
-test: venv  ## 🎯 Unit tests for Flask app
-	. $(SRC_DIR)/.venv/bin/activate \
-	&& pytest -v
+test:  ## 🎯 Unit tests for Flask app
+	pytest -v
 
 test-report: venv  ## 🎯 Unit tests for Flask app (with report output)
 	. $(SRC_DIR)/.venv/bin/activate \
